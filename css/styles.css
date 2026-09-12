@@ -1,0 +1,311 @@
+/* ==========================================================================   Kabod 360 Multiservicios SpA - Hoja de Estilos Principal   ========================================================================== */
+/* Variables Globales */
+:root {
+    --primary-color: #0076FF;
+    --secondary-color: #00E5FF;
+    --bg-dark: #0A0E17;
+    --card-bg: #131A29;
+    --border-color: #1E293B;
+    --text-color: #E2E8F0;
+    --text-muted: #94A3B8;
+    --whatsapp-color: #25D366;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+/* Reset Básico */
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;}
+html {
+      scroll-behavior: smooth;
+}
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Header & Navegación */
+.navbar {
+    background-color: rgba(10, 14, 23, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.logo span {
+    color: var(--secondary-color);
+}
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+.nav-menu a:hover {
+    color: var(--secondary-color);
+}
+/* Botones */
+.btn-primary, .btn-secondary {
+    padding: 10px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #FFFFFF !important;
+}
+.btn-primary:hover {
+    background-color: #0056B3;
+    box-shadow: 0 0 15px rgba(0, 118, 255, 0.4);
+}
+.btn-secondary {
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color) !important;
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-dark) !important;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+.btn-block {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+}
+/* Hero Section */
+.hero {
+    padding: 170px 0 100px;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(0, 118, 255, 0.15) 0%, rgba(10, 14, 23, 1) 70%);
+}
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto 35px;
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+/* Servicios Section */
+.services {
+    padding: 90px 0;
+}
+.section-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+.service-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.service-card .icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 18px;
+}
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+/* Justificar la descripción dentro de las tarjetas de servicios */
+.service-card p {
+    text-align: justify;
+    hyphens: auto; /* Permite guiones automáticos para que el texto no quede muy separado */
+}
+
+/* Justificar el texto del Hero (introducción) si lo necesitas */
+.hero p {
+    text-align: justify;
+}
+
+/* Justificar descripciones de secciones */
+.section-subtitle {
+    text-align: justify;
+}
+
+/* Contacto & Cotización Section */
+.contact-section {
+    padding: 90px 0;
+    background-color: #0E1420;
+    border-top: 1px solid var(--border-color);
+}
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+.contact-form {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+/* Tarjeta Directa de WhatsApp e Info */
+.contact-info-card {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.contact-info-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+}
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+.info-item i {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-top: 3px;
+}
+.whatsapp-icon {
+    color: var(--whatsapp-color) !important;
+}
+.whatsapp-link {
+    color: var(--whatsapp-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--whatsapp-color);
+    color: #FFFFFF;
+    padding: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-whatsapp:hover {
+    background-color: #1EBE5D;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+}
+/* Footer */footer {
+    border-top: 1px solid var(--border-color);
+    padding: 35px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+/* Adaptabilidad Móvil */
+@media (max-width: 868px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+}
+ .hero h1 {
+    font-size: 1.8rem;
+}
+ .form-row {
+    grid-template-columns: 1fr;
+}
+  .hero-buttons {
+    flex-direction: column;
+}
+}
